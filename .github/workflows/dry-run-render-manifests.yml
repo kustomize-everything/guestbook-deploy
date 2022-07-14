@@ -1,12 +1,12 @@
 name: Render Manifests
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
   render-manifests:
-    name: Render manifests
+    name: Dry-run render manifests
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
       - uses: kustomize-everything/action-env-build-and-deploy@highb-combined-diff-and-optional-deploy
         with:
-          dry-run: false
+          dry-run: true
           environment: ${{ matrix.env }}
           push-environment-regex: (dev|stage)
           pr-environment-regex: prod
