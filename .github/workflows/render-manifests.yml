@@ -20,6 +20,6 @@ jobs:
       - uses: kustomize-everything/action-env-build-and-deploy@highb-combined-diff-and-optional-deploy
         with:
           environment: ${{ matrix.env }}
-          push-environment-regex: dev
-          pr-environment-regex: (stage|prod)
+          push-environment-regex: (dev|stage)
+          pr-environment-regex: prod
  
