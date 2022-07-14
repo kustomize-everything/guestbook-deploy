@@ -25,7 +25,7 @@ jobs:
         uses: kustomize-everything/action-env-build-and-deploy@main
         if: github.event_name == 'pull_request'
         with:
-          dry-run: true
+          dry-run: 'true'
           environment: ${{ matrix.env }}
           push-environment-regex: (dev|stage)
           pr-environment-regex: prod
@@ -34,7 +34,7 @@ jobs:
         uses: kustomize-everything/action-env-build-and-deploy@main
         if: github.event_name == 'push'
         with:
-          dry-run: false
+          dry-run: 'false'
           environment: ${{ matrix.env }}
           push-environment-regex: (dev|stage)
           pr-environment-regex: prod
