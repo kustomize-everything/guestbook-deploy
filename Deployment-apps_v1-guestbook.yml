@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    config.kubernetes.io/origin: |
+      path: ../../base/guestbook-deploy.yaml
+    deployment-branch: env/prod
+    deployment-branch-url: https://github.com/kustomize-everything/guestbook-deploy/tree/env/prod
+    deployment-repo: kustomize-everything/guestbook-deploy
+    deployment-repo-url: https://github.com/kustomize-everything/guestbook-deploy
+  labels:
+    app.kubernetes.io/managed-by: kustomize-v4.5.3
+  name: guestbook
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: guestbook
+  template:
+    metadata:
+      annotations:
+        deployment-branch: env/prod
+        deployment-branch-url: https://github.com/kustomize-everything/guestbook-deploy/tree/env/prod
+        deployment-repo: kustomize-everything/guestbook-deploy
+        deployment-repo-url: https://github.com/kustomize-everything/guestbook-deploy
+      labels:
+        app: guestbook
+    spec:
+      containers:
+        - image: ghcr.io/akuity/guestbook:00010-4d5f9ab
+          name: guestbook
+          ports:
+            - containerPort: 3000
