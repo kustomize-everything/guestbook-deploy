@@ -21,7 +21,8 @@ jobs:
           # fetch-depth: 0 needed to get all branches
           fetch-depth: 0
 
-      - uses: kustomize-everything/action-env-build-and-deploy@main
+      - name: Render manifests and comment with diff
+        uses: kustomize-everything/action-env-build-and-deploy@main
         if: github.event_name == 'pull_request'
         with:
           dry-run: true
@@ -29,7 +30,8 @@ jobs:
           push-environment-regex: (dev|stage)
           pr-environment-regex: prod
 
-      - uses: kustomize-everything/action-env-build-and-deploy@main
+      - name: Render manifests and push branch
+        uses: kustomize-everything/action-env-build-and-deploy@main
         if: github.event_name == 'push'
         with:
           dry-run: false
