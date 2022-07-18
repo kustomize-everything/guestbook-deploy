@@ -20,4 +20,4 @@ patchesJson6902:
 
 images:
 - name: ghcr.io/kustomize-everything/guestbook
-  newTag: 00017-405d1ee
+  newTag: 00018-48e93a4
