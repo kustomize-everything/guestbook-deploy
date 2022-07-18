@@ -16,7 +16,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/rules/0/host
-      value: guestbook-dev.demo.akuity.io
+      value: guestbook-dev.demo.kustomize-everything.io
     - op: replace
       path: /spec/tls/0/hosts/0
-      value: guestbook-dev.demo.akuity.io
+      value: guestbook-dev.demo.kustomize-everything.io
