@@ -18,7 +18,7 @@ metadata:
 spec:
   ingressClassName: contour
   rules:
-    - host: guestbook.demo.akuity.io
+    - host: guestbook.demo.kustomize-everything.io
       http:
         paths:
           - backend:
@@ -30,5 +30,5 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - guestbook.demo.akuity.io
+        - guestbook.demo.kustomize-everything.io
       secretName: guestbook-tls
