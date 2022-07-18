@@ -19,7 +19,5 @@ patchesJson6902:
     version: v1
 
 images:
-- name: ghcr.io/akuity/guestbook
-  newTag: 00010-4d5f9ab
 - name: ghcr.io/kustomize-everything/guestbook
   newTag: 00014-636859d
