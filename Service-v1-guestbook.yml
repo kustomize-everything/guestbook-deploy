@@ -9,7 +9,7 @@ metadata:
     deployment-repo: kustomize-everything/guestbook-deploy
     deployment-repo-url: https://github.com/kustomize-everything/guestbook-deploy
   labels:
-    app.kubernetes.io/managed-by: kustomize-v4.5.3
+    app.kubernetes.io/managed-by: kustomize-v4.5.5
   name: guestbook
 spec:
   ports:

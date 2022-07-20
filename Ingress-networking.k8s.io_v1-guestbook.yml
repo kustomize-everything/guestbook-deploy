@@ -13,7 +13,7 @@ metadata:
     ingress.kubernetes.io/force-ssl-redirect: "true"
     kubernetes.io/tls-acme: "true"
   labels:
-    app.kubernetes.io/managed-by: kustomize-v4.5.3
+    app.kubernetes.io/managed-by: kustomize-v4.5.5
   name: guestbook
 spec:
   ingressClassName: contour
