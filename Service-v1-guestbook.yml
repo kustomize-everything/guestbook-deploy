@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    config.kubernetes.io/origin: |
+      path: ../../base/guestbook-svc.yaml
+    deployment-repo: kustomize-everything/guestbook-deploy
+    deployment-repo-url: https://github.com/kustomize-everything/guestbook-deploy
+    env-branch: env-stage
+    env-branch-url: https://github.com/kustomize-everything/guestbook-deploy/tree/env-stage
+  labels:
+    app.kubernetes.io/managed-by: kustomize-v4.5.7
+  name: guestbook
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: guestbook
