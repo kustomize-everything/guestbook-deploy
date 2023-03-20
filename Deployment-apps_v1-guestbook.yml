@@ -29,7 +29,7 @@ spec:
         app: guestbook
     spec:
       containers:
-        - image: ghcr.io/kustomize-everything/guestbook:00026-ceaf635
+        - image: ghcr.io/kustomize-everything/guestbook:00027-d0d1e6a
           limits:
             cpu: 500m
             memory: 128Mi
