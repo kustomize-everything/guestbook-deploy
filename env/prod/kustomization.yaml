@@ -4,14 +4,8 @@ kind: Kustomization
 resources:
 - ../../base
 
-patchesJson6902:
-- patch: |-
-    - op: replace
-      path: /spec/rules/0/host
-      value: guestbook.demo.kustomize-everything.io
-    - op: replace
-      path: /spec/tls/0/hosts/0
-      value: guestbook.demo.kustomize-everything.io
+patches:
+- path: ingress-patch.yaml
   target:
     group: networking.k8s.io
     kind: Ingress
@@ -21,3 +15,4 @@ patchesJson6902:
 images:
 - name: ghcr.io/kustomize-everything/guestbook
   newTag: 00027-d0d1e6a
+
